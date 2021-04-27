@@ -36,7 +36,6 @@ public class Start extends JFrame {
         jbtStart.addActionListener(e -> {
             dispose();
             new Sort();
-
         });
         add(new myComponent());
         setVisible(true);
