@@ -6,8 +6,13 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 public class Start extends JFrame {
+
+
 
     public Start(){
         setResizable(false);
@@ -38,7 +43,17 @@ public class Start extends JFrame {
             new Sort();
         });
         add(new myComponent());
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                dispose();
+                timer.cancel();
+            }
+        },
+                10000);
         setVisible(true);
+
     }
     static class myComponent extends JComponent{
         protected void paintComponent(Graphics g){
