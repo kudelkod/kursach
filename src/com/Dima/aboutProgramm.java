@@ -3,8 +3,8 @@ package com.Dima;
 import javax.swing.*;
 import java.awt.*;
 
-public class AboutProgramm extends JFrame {
-    public AboutProgramm(){
+public class aboutProgramm extends JFrame {
+    public aboutProgramm(){
         setResizable(false);
         setSize(800,600);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

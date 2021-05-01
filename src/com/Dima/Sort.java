@@ -14,7 +14,7 @@ public class Sort extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setTitle("Сортировка числовых данных методом 'Расчески'");
         setLocationRelativeTo(null);
-        Array a = new Array();
+        Array array = new Array();
         String[] items = new String[]{"1000", "10000", "100000"};
         setLayout(new GridLayout(1,3));
         JComboBox<String> cmbBox= new JComboBox<>(items);
@@ -47,14 +47,14 @@ public class Sort extends JFrame {
         helpMenu.add(aboutProgramm);
         helpMenu.add(aboutAuthor);
         fileMenu.add(inFile);
-        aboutProgramm.addActionListener(e -> new AboutProgramm());
-        aboutAuthor.addActionListener(e -> new AboutAuthor());
+        aboutProgramm.addActionListener(e -> new aboutProgramm());
+        aboutAuthor.addActionListener(e -> new aboutAuthor());
         inFile.addActionListener(e ->{
 
             try(FileWriter writer = new FileWriter("file.txt", false))
             {
                 // запись всей строки
-                String[] text = a.getArray().split(", ");
+                String[] text = array.getArray().split(", ");
                 for (String s : text) {
                     writer.append(s);
                     writer.append("\n");
@@ -87,8 +87,8 @@ public class Sort extends JFrame {
 
         jbtCreat.addActionListener(e -> {
             list1.setText(null);
-            a.createArray();
-            String[] s = a.getArray().split(", ");
+            array.createArray();
+            String[] s = array.getArray().split(", ");
             for (String value : s) {
                 list1.append(value);
                 list1.append("\n");
@@ -98,8 +98,8 @@ public class Sort extends JFrame {
             list2.setText(null);
             list3.setText(null);
             long startTime = System.currentTimeMillis();
-            a.sortArrayWaning();
-            String[] s = a.getArray().split(", ");
+            array.sortArrayWaning();
+            String[] s = array.getArray().split(", ");
             for (String value : s) {
                 list2.append(value);
                 list2.append("\n");
@@ -111,8 +111,8 @@ public class Sort extends JFrame {
             list2.setText(null);
             list3.setText(null);
             long startTime = System.currentTimeMillis();
-            a.sortArrayIncreace();
-            String[] s = a.getArray().split(",");
+            array.sortArrayIncreace();
+            String[] s = array.getArray().split(",");
             for (String value : s) {
                 list2.append(value);
                 list2.append("\n");
@@ -128,7 +128,7 @@ public class Sort extends JFrame {
             try(FileWriter writer = new FileWriter("file.txt", false))
             {
                 // запись всей строки
-                String[] text = a.getArray().split(", ");
+                String[] text = array.getArray().split(", ");
                 for (String s : text) {
                     writer.append(s);
                     writer.append("\n");
@@ -142,7 +142,7 @@ public class Sort extends JFrame {
         });
         cmbBox.addActionListener(e -> {
             int n = Integer.parseInt((String) Objects.requireNonNull(cmbBox.getSelectedItem()));
-            a.setNumberOfElements(n);
+            array.setNumberOfElements(n);
         });
     }
 }

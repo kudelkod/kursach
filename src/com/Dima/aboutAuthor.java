@@ -3,8 +3,8 @@ package com.Dima;
 import javax.swing.*;
 import java.awt.*;
 
-public class AboutAuthor extends JFrame {
-    public AboutAuthor() {
+public class aboutAuthor extends JFrame {
+    public aboutAuthor() {
         setResizable(false);
         setSize(800,600);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
