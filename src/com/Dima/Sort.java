@@ -1,5 +1,7 @@
 package com.Dima;
 
+import com.Dima.Model.Array;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.FileWriter;
@@ -11,34 +13,71 @@ public class Sort extends JFrame {
     public Sort(){
         setResizable(false);
         setSize(800,600);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Сортировка числовых данных методом 'Расчески'");
         setLocationRelativeTo(null);
+
         Array array = new Array();
         String[] items = new String[]{"1000", "10000", "100000"};
-        setLayout(new GridLayout(1,3));
+
+        setLayout(new GridLayout(0,3, 10,10));
+
+        JPanel panel1 = new JPanel();
+
+        JPanel panel2 = new JPanel(new GridLayout(9,1, 10, 20));
+
+        JPanel panel3 = new JPanel();
+
         JComboBox<String> cmbBox= new JComboBox<>(items);
-        JButton jbtCleanUnsorted = new JButton("Очистить неотсортированный массив");
-        JButton jbtFile = new JButton("Запись в файл");
-        JButton jbtCleanSorted = new JButton("Очистить отсортированный массив");
+        panel2.add(cmbBox);
+
         JButton jbtCreat = new JButton("Создать массив");
+        panel2.add(jbtCreat);
+
+        JButton jbtCleanUnsorted = new JButton("Очистить исходный массив");
+        panel2.add(jbtCleanUnsorted);
+
         JButton jbtSortWaning = new JButton("Сортировка по убыванию");
+        panel2.add(jbtSortWaning);
+
         JButton jbtSortIncrease = new JButton("Сортировка по возрастанию");
+        panel2.add(jbtSortIncrease);
+
+        JButton jbtCleanSorted = new JButton("Очистить отсортированный массив");
+        panel2.add(jbtCleanSorted);
+
+        JButton jbtFile = new JButton("Запись в файл");
+        panel2.add(jbtFile);
+
         JButton jbtExit = new JButton("Выход");
-        JTextArea list1 = new JTextArea(34,15);
+        panel2.add(jbtExit);
+
+        JLabel label1 = new JLabel("Исходный массив");
+        panel1.add(label1);
+
+        JTextArea list1 = new JTextArea(30,15);
         list1.setLineWrap(true);
         list1.setWrapStyleWord(true);
-        JTextArea list2 = new JTextArea(34,15);
+
+        JLabel label2 = new JLabel("Отсортированный массив");
+        panel3.add(label2);
+
+        JTextArea list2 = new JTextArea(30,15);
         list2.setLineWrap(true);
         list2.setWrapStyleWord(true);
+
         JTextArea list3 = new JTextArea();
+        panel2.add(list3);
+
         JScrollPane scroll1 = new JScrollPane(list1);
+        panel1.add(scroll1);
+
         JScrollPane scroll2 = new JScrollPane(list2);
-        JPanel panel1 = new JPanel();
-        JPanel panel2 = new JPanel(new GridLayout(12,1));
-        JPanel panel3 = new JPanel();
+        panel3.add(scroll2);
+
         MenuBar menuBar = new MenuBar();
         setMenuBar(menuBar);
+
         Menu fileMenu = new Menu("Файл...");
         Menu helpMenu = new Menu("Помощь...");
         MenuItem inFile = new MenuItem("Запись в файл");
@@ -47,8 +86,19 @@ public class Sort extends JFrame {
         helpMenu.add(aboutProgramm);
         helpMenu.add(aboutAuthor);
         fileMenu.add(inFile);
+
+        menuBar.add(fileMenu);
+        menuBar.add(helpMenu);
+        setVisible(true);
+
+        add(panel1);
+        add(panel2);
+        add(panel3);
+
         aboutProgramm.addActionListener(e -> new aboutProgramm());
+
         aboutAuthor.addActionListener(e -> new aboutAuthor());
+
         inFile.addActionListener(e ->{
 
             try(FileWriter writer = new FileWriter("file.txt", false))
@@ -67,24 +117,6 @@ public class Sort extends JFrame {
             }
         });
 
-        panel1.add(scroll1);
-        panel2.add(cmbBox);
-        panel2.add(jbtCreat);
-        panel2.add(jbtCleanUnsorted);
-        panel2.add(jbtSortWaning);
-        panel2.add(jbtSortIncrease);
-        panel2.add(jbtCleanSorted);
-        panel2.add(jbtExit);
-        panel2.add(jbtFile);
-        panel2.add(list3);
-        panel3.add(scroll2);
-        add(panel1);
-        add(panel2);
-        add(panel3);
-        menuBar.add(fileMenu);
-        menuBar.add(helpMenu);
-        setVisible(true);
-
         jbtCreat.addActionListener(e -> {
             list1.setText(null);
             array.createArray();
@@ -94,6 +126,7 @@ public class Sort extends JFrame {
                 list1.append("\n");
             }
         });
+
         jbtSortWaning.addActionListener(e -> {
             list2.setText(null);
             list3.setText(null);
@@ -107,6 +140,7 @@ public class Sort extends JFrame {
             long endTime = System.currentTimeMillis();
             list3.append("Total execution time: " + (endTime-startTime) + "ms");
         });
+
         jbtSortIncrease.addActionListener(e -> {
             list2.setText(null);
             list3.setText(null);
@@ -120,9 +154,13 @@ public class Sort extends JFrame {
             long endTime = System.currentTimeMillis();
             list3.append("Total execution time: " + (endTime-startTime) + "ms");
         });
+
         jbtExit.addActionListener(e -> System.exit(0));
+
         jbtCleanUnsorted.addActionListener(e -> list1.setText(null));
+
         jbtCleanSorted.addActionListener(e -> list2.setText(null));
+
         jbtFile.addActionListener(e ->{
 
             try(FileWriter writer = new FileWriter("file.txt", false))
@@ -140,6 +178,7 @@ public class Sort extends JFrame {
                 System.out.println(ex.getMessage());
             }
         });
+
         cmbBox.addActionListener(e -> {
             int n = Integer.parseInt((String) Objects.requireNonNull(cmbBox.getSelectedItem()));
             array.setNumberOfElements(n);

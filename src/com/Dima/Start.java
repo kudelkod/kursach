@@ -1,5 +1,7 @@
 package com.Dima;
 
+import com.Dima.Sort;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;

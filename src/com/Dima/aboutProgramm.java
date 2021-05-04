@@ -10,24 +10,19 @@ public class aboutProgramm extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setTitle("О Программе");
         setLocationRelativeTo(null);
-        setLayout(new GridLayout(1,1));
-        JTextArea info = new JTextArea("""
-                ________#####___я знаю__________##_______
-                ___________что ты делал _______####______
-                _________прошлым летом!!________##_______
-                _____________________________######_____
-                ____________________________#######_____
-                ____####__________________#########___
-                ___######________________###_######___
-                #########_______________###__######__
-                _#######_______________###___######___
-                _______#################____######__
-                _______##########################__
-                ________################____#####____
-                _________##___________##_____####______
-                _________##___________##_____#########___
-                _______###__________###______#########__""");
-        add(info);
+        add(new myComponent());
         setVisible(true);
+    }
+    static class myComponent extends JComponent{
+        protected void paintComponent(Graphics g){
+            Font font1 = new Font("TimesRoman", Font.BOLD, 14);
+            Graphics2D g1 = (Graphics2D) g;
+            g1.setFont(font1);
+            g1.drawString(" Автор: Куделко Дмитрий", 0, 150);
+            g1.drawString(" E-Mail: kudelkod63@gmail.com", 0, 200);
+            g1.drawString(" Об Авторе: Студент белорусского национального технического университета", 0, 250);
+            g1.drawString(" обучается на Факультете информационных технологий и робототехники", 0, 300);
+
+        }
     }
 }

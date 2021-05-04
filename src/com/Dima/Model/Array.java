@@ -1,4 +1,4 @@
-package com.Dima;
+package com.Dima.Model;
 
 import java.util.Arrays;
 
