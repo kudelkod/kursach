@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class Array {
 
-    public int[] array;
-    public int numberOfElements;
+    private int[] array;
+    private int numberOfElements;
 
     public void createArray(){
         this.array = new int[this.numberOfElements];

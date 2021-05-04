@@ -1,5 +1,5 @@
 package com.Dima;
-
+import com.Dima.Static.*;
 import com.Dima.Model.Array;
 
 import javax.swing.*;
@@ -14,6 +14,7 @@ public class Sort extends JFrame {
         setResizable(false);
         setSize(800,600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Font font = new Font("Verdana", Font.PLAIN, 14);
         setTitle("Сортировка числовых данных методом 'Расчески'");
         setLocationRelativeTo(null);
 
@@ -29,33 +30,42 @@ public class Sort extends JFrame {
         JPanel panel3 = new JPanel();
 
         JComboBox<String> cmbBox= new JComboBox<>(items);
+        cmbBox.setFont(font);
         panel2.add(cmbBox);
 
         JButton jbtCreat = new JButton("Создать массив");
+        jbtCreat.setBorder(new RoundBorder(8));
         panel2.add(jbtCreat);
 
         JButton jbtCleanUnsorted = new JButton("Очистить исходный массив");
+        jbtCleanUnsorted.setBorder(new RoundBorder(8));
         panel2.add(jbtCleanUnsorted);
 
         JButton jbtSortWaning = new JButton("Сортировка по убыванию");
+        jbtSortWaning.setBorder(new RoundBorder(8));
         panel2.add(jbtSortWaning);
 
         JButton jbtSortIncrease = new JButton("Сортировка по возрастанию");
+        jbtSortIncrease.setBorder(new RoundBorder(8));
         panel2.add(jbtSortIncrease);
 
         JButton jbtCleanSorted = new JButton("Очистить отсортированный массив");
+        jbtCleanSorted.setBorder(new RoundBorder(8));
         panel2.add(jbtCleanSorted);
 
         JButton jbtFile = new JButton("Запись в файл");
+        jbtFile.setBorder(new RoundBorder(8));
         panel2.add(jbtFile);
 
         JButton jbtExit = new JButton("Выход");
+        jbtExit.setBorder(new RoundBorder(8));
         panel2.add(jbtExit);
 
         JLabel label1 = new JLabel("Исходный массив");
         panel1.add(label1);
 
         JTextArea list1 = new JTextArea(30,15);
+        list1.setBorder(new RoundBorder(8));
         list1.setLineWrap(true);
         list1.setWrapStyleWord(true);
 
@@ -63,10 +73,12 @@ public class Sort extends JFrame {
         panel3.add(label2);
 
         JTextArea list2 = new JTextArea(30,15);
+        list2.setBorder(new RoundBorder(8));
         list2.setLineWrap(true);
         list2.setWrapStyleWord(true);
 
-        JTextArea list3 = new JTextArea();
+        JTextArea list3 = new JTextArea("Время выполнения сортировки");
+        list3.setBorder(new RoundBorder(8));
         panel2.add(list3);
 
         JScrollPane scroll1 = new JScrollPane(list1);
@@ -138,7 +150,7 @@ public class Sort extends JFrame {
                 list2.append("\n");
             }
             long endTime = System.currentTimeMillis();
-            list3.append("Total execution time: " + (endTime-startTime) + "ms");
+            list3.append("Время сортировки: " + (endTime-startTime)/1000 + "секунд");
         });
 
         jbtSortIncrease.addActionListener(e -> {
@@ -152,7 +164,7 @@ public class Sort extends JFrame {
                 list2.append("\n");
             }
             long endTime = System.currentTimeMillis();
-            list3.append("Total execution time: " + (endTime-startTime) + "ms");
+            list3.append("Время сортировки: " + (endTime-startTime)/1000 + "секунд");
         });
 
         jbtExit.addActionListener(e -> System.exit(0));
