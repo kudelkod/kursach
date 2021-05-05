@@ -39,7 +39,8 @@ public class Start extends JFrame {
         jbtExit.setBounds(410,500,285,30);
         label.setSize(800,600);
         try{
-            BufferedImage image = ImageIO.read(new File("Sort1.jpg"));
+            BufferedImage image = ImageIO.read(new File("D:\\kursach\\out\\artifacts" +
+                    "\\kursach_jar\\static\\Sort1.jpg"));
             ImageIcon icon = new ImageIcon(image.getScaledInstance(180,180, Image.SCALE_SMOOTH));
             label.setIcon(icon);
         } catch (IOException ex){

@@ -145,7 +145,7 @@ public class Sort extends JFrame {
 
         inFile.addActionListener(e ->{
 
-            try(FileWriter writer = new FileWriter("file.txt", false))
+            try(FileWriter writer = new FileWriter("file.txt", true))
             {
                 // запись всей строки
                 String[] text = array.getArray().split(", ");
