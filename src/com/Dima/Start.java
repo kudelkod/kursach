@@ -1,7 +1,5 @@
 package com.Dima;
 
-import com.Dima.Sort;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -12,10 +10,19 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
+/**
+ *<strong>Дочерний класс Start, который наследуется от класса JFrame</strong>
+ *
+ * <i>В данном классе реализован Frame начального экрана и его компоненты</i>
+ *
+ * @author Dmitriy Kudelko
+ * @version 1.0
+ */
 public class Start extends JFrame {
 
-
-
+    /**
+     *<i>Конструктор для создания Frame</i>
+     */
     public Start(){
         setResizable(false);
         setSize(800,600);
@@ -32,12 +39,15 @@ public class Start extends JFrame {
         jbtExit.setBounds(410,500,285,30);
         label.setSize(800,600);
         try{
-            BufferedImage image = ImageIO.read(new File("Sort.jpg"));
+            BufferedImage image = ImageIO.read(new File("Sort1.jpg"));
             ImageIcon icon = new ImageIcon(image.getScaledInstance(180,180, Image.SCALE_SMOOTH));
             label.setIcon(icon);
         } catch (IOException ex){
             System.out.println(ex.getMessage());
         }
+        label.setBounds(80, 250,180,180);
+
+
 
         jbtExit.addActionListener(e -> System.exit(0));
         jbtStart.addActionListener(e -> {
@@ -53,10 +63,16 @@ public class Start extends JFrame {
                 timer.cancel();
             }
         },
-                10000);
-        setVisible(true);
+                60000);
 
+        setVisible(true);
     }
+
+    /**
+     *<strong>Дочерний класс myComponent, который наследуется от класса JComponent</strong>
+     *
+     * <i>В данном классе реализован компонет для {@link Start}</i>
+     */
     static class myComponent extends JComponent{
         protected void paintComponent(Graphics g){
             Font font1 = new Font("TimesRoman", Font.BOLD, 14);

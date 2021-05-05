@@ -2,11 +2,25 @@ package com.Dima.Model;
 
 import java.util.Arrays;
 
+/**
+ *<strong>Модель массива</strong>
+ *
+ * <i>Содержит все необходимые методы для создания объектов класса {@link Array},
+ * а так же методы для установления и получения значений полей класса</i>
+ *
+ * @author Dmitriy Kudelko
+ * @version 1.0
+ */
 public class Array {
-
+    /** <b>Массив</b> */
     private int[] array;
+
+    /** <b>Количество элементов массива</b>*/
     private int numberOfElements;
 
+    /**
+     *<i>Метод для создания массива заполненного случайным набором числовых данных</i>
+     */
     public void createArray(){
         this.array = new int[this.numberOfElements];
         for (int i = 0; i < this.array.length; i++){
@@ -14,11 +28,18 @@ public class Array {
         }
     }
 
+    /**
+     * <i>Метод, получающий значение поля {@link Array#array}</i>
+     * @return Массив значений
+     */
     public String getArray(){
-        return Arrays.toString(this.array);
+        return Arrays.toString(this.array).replace("[","").replace("]","");
 
     }
 
+    /**
+     *<i>Метод для сортировки массива по возрастанию</i>
+     */
     public void sortArrayIncreace(){
         int step = (int) (this.array.length / 1.247);
         int swapCount = 1;
@@ -37,6 +58,10 @@ public class Array {
             }
         }
     }
+
+    /**
+     *<i>Метод для сортировки массива по убыванию</i>
+     */
     public void sortArrayWaning(){
         int step = (int) (this.array.length / 1.247);
         int swapCount = 1;
@@ -55,6 +80,11 @@ public class Array {
             }
         }
     }
+
+    /**
+     * <i>Метод устанавливающий количество элементов поля {@link Array#numberOfElements}</i>
+     * @param n Количество элементов массива
+     */
     public void setNumberOfElements(int n){
         this.numberOfElements = n;
     }

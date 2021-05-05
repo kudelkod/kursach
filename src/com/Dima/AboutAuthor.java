@@ -3,16 +3,26 @@ package com.Dima;
 import javax.swing.*;
 import java.awt.*;
 
-public class aboutProgramm extends JFrame {
-    public aboutProgramm(){
+/**
+ *
+ */
+public class AboutAuthor extends JFrame {
+    /**
+     *
+     */
+    public AboutAuthor() {
         setResizable(false);
         setSize(800,600);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setTitle("О Программе");
+        setTitle("Об авторе");
         setLocationRelativeTo(null);
         add(new myComponent());
         setVisible(true);
     }
+
+    /**
+     *
+     */
     static class myComponent extends JComponent{
         protected void paintComponent(Graphics g){
             Font font1 = new Font("TimesRoman", Font.BOLD, 14);
