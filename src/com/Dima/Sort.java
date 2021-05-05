@@ -19,7 +19,7 @@ import java.util.Objects;
  */
 public class Sort extends JFrame {
     /**
-     *<i>Конструктор для создания Frame</i>
+     *<i>Конструктор для создания основного Frame программы</i>
      */
     public Sort(){
         setResizable(true);

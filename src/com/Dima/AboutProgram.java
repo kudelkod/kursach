@@ -4,11 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
+ *<strong>Дочерний класс AboutProgram, который наследуется от класса JFrame</strong>
  *
+ * <i>В данном классе реализован Frame о программе и его компоненты</i>
  */
 public class AboutProgram extends JFrame {
     /**
-     *
+     *<i>Конструктор для создания Frame о программе</i>
      */
     public AboutProgram(){
         setResizable(false);
@@ -21,7 +23,9 @@ public class AboutProgram extends JFrame {
     }
 
     /**
+     *<strong>Дочерний класс myComponent, который наследуется от класса JComponent</strong>
      *
+     * <i>В данном классе реализован компонет для {@link AboutProgram}</i>
      */
     static class myComponent extends JComponent{
 

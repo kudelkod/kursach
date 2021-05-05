@@ -21,7 +21,7 @@ import java.util.TimerTask;
 public class Start extends JFrame {
 
     /**
-     *<i>Конструктор для создания Frame</i>
+     *<i>Конструктор для создания Frame начального экрана</i>
      */
     public Start(){
         setResizable(false);
@@ -57,6 +57,9 @@ public class Start extends JFrame {
         add(new myComponent());
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
+            /**
+             * <i>метод закрывающий приложение при бездействии</i>
+             */
             @Override
             public void run() {
                 dispose();

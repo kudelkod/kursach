@@ -13,10 +13,10 @@ import java.util.Arrays;
  */
 public class Array {
     /** <b>Массив</b> */
-    private int[] array;
+    public int[] array;
 
     /** <b>Количество элементов массива</b>*/
-    private int numberOfElements;
+    public int numberOfElements;
 
     /**
      *<i>Метод для создания массива заполненного случайным набором числовых данных</i>
