@@ -1,7 +1,10 @@
 package com.Dima;
 
 /**
- * Саня хуй соси
+ * <strong></strong>
+ *
+ * @author Dmitriy Kudelko
+ * @version 1.0
  */
 public class Main {
 

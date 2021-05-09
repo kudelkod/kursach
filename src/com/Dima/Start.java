@@ -11,9 +11,9 @@ import java.util.TimerTask;
 
 
 /**
- *<strong>Дочерний класс Start, который наследуется от класса JFrame</strong>
+ *<strong>Child class Start, which is inherited from the class JFrame</strong>
  *
- * <i>В данном классе реализован Frame начального экрана и его компоненты</i>
+ * <i>In this class implemented SplashScreen and it's component</i>
  *
  * @author Dmitriy Kudelko
  * @version 1.0
@@ -21,7 +21,7 @@ import java.util.TimerTask;
 public class Start extends JFrame {
 
     /**
-     *<i>Конструктор для создания Frame начального экрана</i>
+     *<i>Constructor to create SplashScreen</i>
      */
     public Start(){
         setResizable(false);
@@ -73,9 +73,9 @@ public class Start extends JFrame {
     }
 
     /**
-     *<strong>Дочерний класс myComponent, который наследуется от класса JComponent</strong>
+     *<strong>Child class myComponent, which is inherited from the class JComponent</strong>
      *
-     * <i>В данном классе реализован компонет для {@link Start}</i>
+     * <i>In this class implemented component for {@link Start}</i>
      */
     static class myComponent extends JComponent{
         protected void paintComponent(Graphics g){

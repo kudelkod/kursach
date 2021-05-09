@@ -10,16 +10,16 @@ import java.util.Objects;
 
 
 /**
- *<strong>Дочерний класс Sort, который наследуется от класса JFrame</strong>
+ *<strong>Child class Sort, which is inherited from the class JFrame</strong>
  *
- * <i>В данном классе реализован основной Frame программы и его компоненты</i>
+ * <i>in this class implemented core program Frame and it's components</i>
  *
  * @author Dmitriy Kudelko
  * @version 1.0
  */
 public class Sort extends JFrame {
     /**
-     *<i>Конструктор для создания основного Frame программы</i>
+     *<i>Constructor to create core program Frame </i>
      */
     public Sort(){
         setResizable(true);
