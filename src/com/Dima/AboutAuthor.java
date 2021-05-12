@@ -4,13 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- *<strong>Дочерний класс AboutAuthor, который наследуется от класса JFrame</strong>
+ *<strong>Child class AboutAuthor, which is inherited from the class JFrame</strong>
  *
- * <i>В данном классе реализован Frame об авторе и его компоненты</i>
+ * <i>In this class implemented Frame about author and it's components</i>
  */
 public class AboutAuthor extends JFrame {
     /**
-     *<i>Конструктор для создания Frame об авторе</i>
+     *<i>Constructor to create Frame about author</i>
      */
     public AboutAuthor() {
         setResizable(false);
@@ -23,9 +23,9 @@ public class AboutAuthor extends JFrame {
     }
 
     /**
-     *<strong>Дочерний класс myComponent, который наследуется от класса JComponent</strong>
+     *<strong>Child class myComponent, which is inherited from the class JComponent</strong>
      *
-     * <i>В данном классе реализован компонет для {@link AboutAuthor}</i>
+     * <i>In this class implemented component for {@link AboutAuthor}</i>
      */
     static class myComponent extends JComponent{
         protected void paintComponent(Graphics g){

@@ -1,7 +1,7 @@
 package com.Dima;
 
 /**
- * <strong></strong>
+ * <strong>Main program class</strong>
  *
  * @author Dmitriy Kudelko
  * @version 1.0
@@ -9,7 +9,7 @@ package com.Dima;
 public class Main {
 
     /**
-     * @param args Маму ебал
+     * @param args
      */
     public static void main(String[] args) {
         new Start();

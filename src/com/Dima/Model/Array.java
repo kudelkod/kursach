@@ -3,7 +3,7 @@ package com.Dima.Model;
 import java.util.Arrays;
 
 /**
- *<strong>Модель массива</strong>
+ *<strong>Array model</strong>
  *
  * <i>Содержит все необходимые методы для создания объектов класса {@link Array},
  * а так же методы для установления и получения значений полей класса</i>
@@ -12,14 +12,14 @@ import java.util.Arrays;
  * @version 1.0
  */
 public class Array {
-    /** <b>Массив</b> */
+    /** <b>Array</b> */
     public int[] array;
 
-    /** <b>Количество элементов массива</b>*/
+    /** <b>Number of elements in array</b>*/
     public int numberOfElements;
 
     /**
-     *<i>Метод для создания массива заполненного случайным набором числовых данных</i>
+     *<i>Method to create array</i>
      */
     public void createArray(){
         this.array = new int[this.numberOfElements];
@@ -29,8 +29,8 @@ public class Array {
     }
 
     /**
-     * <i>Метод, получающий значение поля {@link Array#array}</i>
-     * @return Массив значений
+     * <i>Method to get{@link Array#array}</i>
+     * @return Array
      */
     public String getArray(){
         return Arrays.toString(this.array).replace("[","").replace("]","");
@@ -38,7 +38,7 @@ public class Array {
     }
 
     /**
-     *<i>Метод для сортировки массива по возрастанию</i>
+     *<i>Method to sort array increase</i>
      */
     public void sortArrayIncreace(){
         int step = (int) (this.array.length / 1.247);
@@ -60,7 +60,7 @@ public class Array {
     }
 
     /**
-     *<i>Метод для сортировки массива по убыванию</i>
+     *<i>Method to sort array waning</i>
      */
     public void sortArrayWaning(){
         int step = (int) (this.array.length / 1.247);
@@ -82,8 +82,8 @@ public class Array {
     }
 
     /**
-     * <i>Метод устанавливающий количество элементов поля {@link Array#numberOfElements}</i>
-     * @param n Количество элементов массива
+     * <i>Method to set {@link Array#numberOfElements}</i>
+     * @param n Number of elements in array
      */
     public void setNumberOfElements(int n){
         this.numberOfElements = n;

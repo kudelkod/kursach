@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.Dima"},{"l":"com.Dima.Model"},{"l":"com.Dima.Static"}];updateSearchResults();

@@ -25,7 +25,7 @@ public class AboutProgram extends JFrame {
     /**
      *<strong>Child class myComponent, witch is inherited from the class JComponent</strong>
      *
-     * <i>In this class implemented component for{@link AboutProgram}</i>
+     * <i>In this class implemented component for {@link AboutProgram}</i>
      */
     static class myComponent extends JComponent{
 

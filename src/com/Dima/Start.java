@@ -1,5 +1,7 @@
 package com.Dima;
 
+import com.Dima.Static.RoundBorder;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -27,11 +29,13 @@ public class Start extends JFrame {
         setResizable(false);
         setSize(800,600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setTitle("Начальный экран");
+        setTitle("SplashScreen");
         setLocationRelativeTo(null);
         JLabel label = new JLabel();
-        JButton jbtStart = new JButton("Далее");
-        JButton jbtExit = new JButton("Выход");
+        JButton jbtStart = new JButton("Next");
+        jbtStart.setBorder(new RoundBorder(8));
+        JButton jbtExit = new JButton("Exit");
+        jbtExit.setBorder(new RoundBorder(8));
         add(label);
         add(jbtStart);
         add(jbtExit);
