@@ -41,6 +41,8 @@ public class Sort extends JFrame {
 
         JPanel panel3 = new JPanel();
 
+        JPanel panel4 = new JPanel(new GridLayout(1,2));
+
         JComboBox<String> cmbBox= new JComboBox<>(items);
         cmbBox.setBorder(new RoundBorder(4));
         cmbBox.setFont(font);
@@ -56,15 +58,19 @@ public class Sort extends JFrame {
         jbtCleanUnsorted.setFont(font1);
         panel2.add(jbtCleanUnsorted);
 
-        JButton jbtSortWaning = new JButton("Sort waning");
-        jbtSortWaning.setBorder(new RoundBorder(8));
-        jbtSortWaning.setFont(font1);
-        panel2.add(jbtSortWaning);
+        ButtonGroup G = new ButtonGroup();
+        JRadioButton rBI = new JRadioButton("Sort Increase");
+        JRadioButton rBW = new JRadioButton("Sort Waning");
+        G.add(rBI);
+        G.add(rBW);
+        panel4.add(rBI);
+        panel4.add(rBW);
+        panel2.add(panel4);
 
-        JButton jbtSortIncrease = new JButton("Sort increase");
-        jbtSortIncrease.setBorder(new RoundBorder(8));
-        jbtSortIncrease.setFont(font1);
-        panel2.add(jbtSortIncrease);
+        JButton jbtSort = new JButton("Sort");
+        jbtSort.setBorder(new RoundBorder(8));
+        jbtSort.setFont(font1);
+        panel2.add(jbtSort);
 
         JButton jbtCleanSorted = new JButton("Clear sorted array");
         jbtCleanSorted.setBorder(new RoundBorder(8));
@@ -172,32 +178,39 @@ public class Sort extends JFrame {
             }
         });
 
-        jbtSortWaning.addActionListener(e -> {
-            list2.setText(null);
-            list3.setText(null);
-            long startTime = System.currentTimeMillis();
-            array.sortArrayWaning();
-            String[] s = array.getArray().split(", ");
-            for (String value : s) {
-                list2.append(value);
-                list2.append("\n");
+        jbtSort.addActionListener(e -> {
+            try {
+                if (rBI.isSelected()) {
+                    list2.setText(null);
+                    list3.setText(null);
+                    long startTime = System.currentTimeMillis();
+                    array.sortArrayIncreace();
+                    String[] s = array.getArray().split(",");
+                    for (String value : s) {
+                        list2.append(value);
+                        list2.append("\n");
+                    }
+                    long endTime = System.currentTimeMillis();
+                    list3.append("Sorting time: " + (endTime - startTime) + " ms");
+                } else if (rBW.isSelected()) {
+                    list2.setText(null);
+                    list3.setText(null);
+                    long startTime = System.currentTimeMillis();
+                    array.sortArrayWaning();
+                    String[] s = array.getArray().split(", ");
+                    for (String value : s) {
+                        list2.append(value);
+                        list2.append("\n");
+                    }
+                    long endTime = System.currentTimeMillis();
+                    list3.append("Sorting time: " + (endTime - startTime) + " ms");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Select a sorting type!");
+                }
             }
-            long endTime = System.currentTimeMillis();
-            list3.append("Sorting time: " + (endTime-startTime) + " ms");
-        });
-
-        jbtSortIncrease.addActionListener(e -> {
-            list2.setText(null);
-            list3.setText(null);
-            long startTime = System.currentTimeMillis();
-            array.sortArrayIncreace();
-            String[] s = array.getArray().split(",");
-            for (String value : s) {
-                list2.append(value);
-                list2.append("\n");
+            catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Create array please!");
             }
-            long endTime = System.currentTimeMillis();
-            list3.append("Sorting time: " + (endTime-startTime) + " ms");
         });
 
         jbtExit.addActionListener(e -> System.exit(0));
