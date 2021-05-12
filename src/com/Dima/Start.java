@@ -41,16 +41,16 @@ public class Start extends JFrame {
         add(jbtExit);
         jbtStart.setBounds(80,500,285,30);
         jbtExit.setBounds(410,500,285,30);
-        label.setSize(800,600);
+        //label.setSize(800,600);
         try{
             BufferedImage image = ImageIO.read(new File("D:\\kursach\\out\\artifacts" +
-                    "\\kursach_jar\\static\\Sort1.jpg"));
-            ImageIcon icon = new ImageIcon(image.getScaledInstance(180,180, Image.SCALE_SMOOTH));
+                    "\\kursach_jar\\static\\Comb_sort.gif"));
+            ImageIcon icon = new ImageIcon(image.getScaledInstance(200,200, Image.SCALE_SMOOTH));
             label.setIcon(icon);
         } catch (IOException ex){
             System.out.println(ex.getMessage());
         }
-        label.setBounds(80, 250,180,180);
+        label.setBounds(80, 250,200,200);
 
 
 

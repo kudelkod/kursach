@@ -18,6 +18,10 @@ public class Array {
     /** <b>Number of elements in array</b>*/
     public int numberOfElements;
 
+    public Array(){
+        this.numberOfElements=1000;
+    }
+
     /**
      *<i>Method to create array</i>
      */

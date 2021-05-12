@@ -42,25 +42,31 @@ public class Sort extends JFrame {
         JPanel panel3 = new JPanel();
 
         JPanel panel4 = new JPanel(new GridLayout(1,2));
+        panel4.setBorder(new RoundBorder(8));
 
         JComboBox<String> cmbBox= new JComboBox<>(items);
         cmbBox.setBorder(new RoundBorder(4));
         cmbBox.setFont(font);
+        cmbBox.setToolTipText("Select number of elements to for array");
         panel2.add(cmbBox);
 
         JButton jbtCreat = new JButton("Create array");
         jbtCreat.setBorder(new RoundBorder(8));
         jbtCreat.setFont(font1);
+        jbtCreat.setToolTipText("Create array with random numbers");
         panel2.add(jbtCreat);
 
         JButton jbtCleanUnsorted = new JButton("Clear source array");
         jbtCleanUnsorted.setBorder(new RoundBorder(8));
         jbtCleanUnsorted.setFont(font1);
+        jbtCleanUnsorted.setToolTipText("Clean area with source array");
         panel2.add(jbtCleanUnsorted);
 
         ButtonGroup G = new ButtonGroup();
         JRadioButton rBI = new JRadioButton("Sort Increase");
+        rBI.setToolTipText("Select a type of sorting");
         JRadioButton rBW = new JRadioButton("Sort Waning");
+        rBW.setToolTipText("Select a type of sorting");
         G.add(rBI);
         G.add(rBW);
         panel4.add(rBI);
@@ -70,21 +76,25 @@ public class Sort extends JFrame {
         JButton jbtSort = new JButton("Sort");
         jbtSort.setBorder(new RoundBorder(8));
         jbtSort.setFont(font1);
+        jbtSort.setToolTipText("Sort source array");
         panel2.add(jbtSort);
 
         JButton jbtCleanSorted = new JButton("Clear sorted array");
         jbtCleanSorted.setBorder(new RoundBorder(8));
         jbtCleanSorted.setFont(font1);
+        jbtCleanSorted.setToolTipText("Clean area with sorted array");
         panel2.add(jbtCleanSorted);
 
         JButton jbtFile = new JButton("Writing to a file");
         jbtFile.setBorder(new RoundBorder(8));
         jbtFile.setFont(font1);
+        jbtFile.setToolTipText("Writing data to a file");
         panel2.add(jbtFile);
 
         JButton jbtExit = new JButton("Exit");
         jbtExit.setBorder(new RoundBorder(8));
         jbtExit.setFont(font1);
+        jbtExit.setToolTipText("Exit the program");
         panel2.add(jbtExit);
 
         JLabel label1 = new JLabel("Source array: ");
@@ -161,10 +171,11 @@ public class Sort extends JFrame {
                     writer.append("\n");
                 }
                 writer.flush();
+                JOptionPane.showMessageDialog(null, "Data recorded successfully!");
             }
             catch(IOException ex){
 
-                System.out.println(ex.getMessage());
+                JOptionPane.showMessageDialog(null, ex.getMessage());
             }
         });
 
@@ -230,6 +241,7 @@ public class Sort extends JFrame {
                     writer.append("\n");
                 }
                 writer.flush();
+                JOptionPane.showMessageDialog(null, "Data recorded successfully!");
             }
             catch(IOException ex){
 
@@ -238,8 +250,8 @@ public class Sort extends JFrame {
         });
 
         cmbBox.addActionListener(e -> {
-            int n = Integer.parseInt((String) Objects.requireNonNull(cmbBox.getSelectedItem()));
-            array.setNumberOfElements(n);
+                int n = Integer.parseInt((String) Objects.requireNonNull(cmbBox.getSelectedItem()));
+                array.setNumberOfElements(n);
         });
     }
 }
