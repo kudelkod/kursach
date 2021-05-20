@@ -4,10 +4,10 @@ import javax.swing.border.Border;
 import java.awt.*;
 
 
-public class RoundBorder implements Border {
+public class RoundedBorders implements Border {
     private int radius;
 
-    public RoundBorder(int radius) {
+    public RoundedBorders(int radius) {
         this.radius = radius;
     }
 

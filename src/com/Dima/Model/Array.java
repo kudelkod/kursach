@@ -12,23 +12,24 @@ import java.util.Arrays;
  * @version 1.0
  */
 public class Array {
-    /** <b>Array</b> */
-    public int[] array;
+    private int[] array;
+    private int numberOfElements;
 
-    /** <b>Number of elements in array</b>*/
-    public int numberOfElements;
-
+    /**
+     *<i>Constructor to create array of numeric data</i>
+     */
     public Array(){
         this.numberOfElements=1000;
     }
 
     /**
-     *<i>Method to create array</i>
+     *<i>Method to fill array</i>
      */
     public void createArray(){
         this.array = new int[this.numberOfElements];
         for (int i = 0; i < this.array.length; i++){
-            this.array[i] = (int) (Math.random() *this.numberOfElements);
+            this.array[i] = (int) (Math.random()
+                    *this.numberOfElements);
         }
     }
 
@@ -37,7 +38,9 @@ public class Array {
      * @return Array
      */
     public String getArray(){
-        return Arrays.toString(this.array).replace("[","").replace("]","");
+        return Arrays.toString(this.array).replace
+                ("[","").
+                replace("]","");
 
     }
 
